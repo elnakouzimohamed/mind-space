@@ -3,7 +3,7 @@ export default function Banner(){
 
     return(
 
-        <section className="max-w-[1400px] p-5">
+        <section className="max-w-[1400px] m-auto   p-5">
             <p className="text-white text-center  text-[82px]"> 
 
             here’s a teeny-weeny <br/>
