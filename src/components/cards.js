@@ -5,7 +5,7 @@ const Card = ({ image, title, description }) => {
   return (
     <div className=" overflow-hidden text-white ">
         <div className=" overflow-hidden">
-      <Image src={image} className=" transform transition-transform duration-2000 hover:scale-120" alt={title}  width={400} height={150} />
+      <Image src={image} className=" transform transition-transform duration-2000 hover:scale-120 w-full h-full " alt={title}  width={400} height={150} />
       
         <h2 className=" text-[18px] font-bold mt-2">{title}</h2>
         <p className="text-white  text-[14px] mt-2">{description}</p>
@@ -82,7 +82,7 @@ const CardsContainer = () => {
       
 
   return (
-    <section className="bg-black">
+    <section className="bg-black m-auto ">
     <div className="m-auto  max-w-[1400px]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6  m-auto sm:p-[200px] p-[70px]">
         {cards.map((card, index) => (
