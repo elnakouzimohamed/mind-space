@@ -14,7 +14,7 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Custom Cursor */}
+     
       <div
         className="fixed top-0 left-0 w-12 h-12 border border-gray-500 rounded-full pointer-events-none transition-transform duration-75 ease-out"
         style={{
