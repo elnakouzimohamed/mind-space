@@ -2,7 +2,7 @@ export default function Banner(){
 
 
     return(
-        <section className=" bg-black" style={{ backgroundImage: "url('/banner.svg')"}}>
+        <section className="m-auto bg-center bg-black" style={{ backgroundImage: "url('/banner.svg')"}}>
         <div className="max-w-[1400px] m-auto  p-5" >
             <p className="text-white text-center  md:text-[82px] sm:text-[50px] text-[30px]"> 
 
