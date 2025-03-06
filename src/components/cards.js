@@ -7,10 +7,10 @@ const Card = ({ image, title, description }) => {
         <div className=" overflow-hidden">
       <Image src={image} className=" transform transition-transform duration-2000 hover:scale-120 w-full h-full " alt={title}  width={400} height={150} />
       
-        <h2 className=" text-[18px] font-bold mt-2">{title}</h2>
-        <p className="text-white  text-[14px] mt-2">{description}</p>
       </div>
      
+      <h2 className=" text-[18px] font-bold mt-2">{title}</h2>
+        <p className="text-white  text-[14px] mt-2">{description}</p>
     </div>
   );
 };
