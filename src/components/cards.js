@@ -4,7 +4,7 @@ import Image from "next/image";
 const Card = ({ image, title, description }) => {
   return (
     <div className="  text-white">
-      <Image src={image} className="w-full" alt={title}  width={400} height={130} />
+      <Image src={image} className="w-full" alt={title}  width={400} height={150} />
       <div className="p-6">
         <h2 className="text-[18px] font-bold">{title}</h2>
         <p className="text-white text-[14px] mt-2">{description}</p>
