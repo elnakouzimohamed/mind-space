@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import Banner from "@/components/banner";
-
+import Projects from "@/components/projects";
 import CardsContainer from "@/components/cards";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -19,6 +20,7 @@ export default function Home() {
    
     <Banner></Banner>
     <CardsContainer></CardsContainer>
+    <Projects></Projects>
     
  
     </>
