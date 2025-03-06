@@ -4,7 +4,7 @@ import Image from "next/image";
 const Card = ({ image, title, description }) => {
   return (
     <div className="  text-white">
-      <Image src={image} className="w-full" alt={title}  width={500} height={130} />
+      <Image src={image} className="w-full" alt={title}  width={400} height={130} />
       <div className="p-6">
         <h2 className="text-[18px] font-bold">{title}</h2>
         <p className="text-white text-[14px] mt-2">{description}</p>
@@ -80,7 +80,7 @@ const CardsContainer = () => {
       
 
   return (
-    <div className="m-auto max-w-[1600px]">
+    <div className="m-auto max-w-[1400px]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-[200px] m-auto">
         {cards.map((card, index) => (
           <Card key={index} {...card} />
