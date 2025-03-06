@@ -3,14 +3,14 @@ import Image from "next/image";
 
 const Card = ({ image, title, description }) => {
   return (
-    <div className="  text-white">
-        <div className="overflow-hidden">
-      <Image src={image} className="w-full transform transition-transform duration-2000 hover:scale-120" alt={title}  width={400} height={150} />
-      <div className="p-6">
-        <h2 className="text-[18px] font-bold">{title}</h2>
-        <p className="text-white text-[14px] mt-2">{description}</p>
+    <div className=" overflow-hidden text-white ">
+        <div className=" overflow-hidden">
+      <Image src={image} className=" transform transition-transform duration-2000 hover:scale-120" alt={title}  width={400} height={150} />
+      
+        <h2 className=" text-[18px] font-bold mt-2">{title}</h2>
+        <p className="text-white  text-[14px] mt-2">{description}</p>
       </div>
-      </div>
+     
     </div>
   );
 };
@@ -82,13 +82,15 @@ const CardsContainer = () => {
       
 
   return (
-    <div className="m-auto max-w-[1400px]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-[200px] m-auto">
+    <section className="bg-black">
+    <div className="m-auto  max-w-[1400px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6  m-auto sm:p-[200px] p-[70px]">
         {cards.map((card, index) => (
           <Card key={index} {...card} />
         ))}
       </div>
     </div>
+    </section>
   );
 };
 

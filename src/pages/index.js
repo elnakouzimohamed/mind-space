@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 export default function Home() {
   return (
     <>
-   <section className=" bg-black bg-no-repeat m-auto bg-center " style={{ backgroundImage: "url('/banner.svg')"}}>
+   
     <Banner></Banner>
     <CardsContainer></CardsContainer>
     
-    </section>
+ 
     </>
   );
 }
