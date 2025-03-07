@@ -4,6 +4,7 @@ import Banner from "@/components/banner";
 import Projects from "@/components/projects";
 import CardsContainer from "@/components/cards";
 import CustomCursor from "@/components/cursor";
+import ScrollMeter from "@/components/scrollmeter";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -21,6 +22,7 @@ export default function Home() {
     <Banner></Banner>
     <CardsContainer></CardsContainer>
     <Projects></Projects>
+    <ScrollMeter></ScrollMeter>
     
  
     </>
