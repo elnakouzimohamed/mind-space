@@ -1,5 +1,5 @@
 import React from "react";
-
+import { getData } from "@/pages/data";
 export const getStaticProps = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/users');
     const data = await res.json();
@@ -14,8 +14,10 @@ export const getStaticProps = async () => {
 
 export default function TestingApi({dictionary}){
         console.log(dictionary)
+       
+        const data = getData()
         return(
-            <p>Testing done</p>
+            <p> {data}</p>
         )
 
   }
