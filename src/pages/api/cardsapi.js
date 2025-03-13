@@ -1,51 +1,5 @@
-import React, { createContext, useState, useContext } from "react";
-import Image from "next/image";
 
-
-const CursorContext = createContext();
-
-export const getStaticProps = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const data = await res.json();
-  
-  console.log(data);
-  return {
-      props: { cards2: data }
-      
-  }
-  
-}
-
-
-export const useCursor = () => useContext(CursorContext);
-
-const Card = ({ image, title, description }) => {
-  const { setIsHoveringImage } = useCursor(); // Use context from provider
-
-  return (
-    <div className="overflow-hidden text-white">
-      <div className="overflow-hidden">
-        <Image
-          src={image}
-          className="transform transition-transform duration-2000 hover:scale-120 w-full h-full"
-          alt={title}
-          width={400}
-          height={150}
-          onMouseEnter={() => setIsHoveringImage(true)} // Update context
-          onMouseLeave={() => setIsHoveringImage(false)}
-        />
-      </div>
-      <h2 className="text-[18px] font-bold mt-2">{title}</h2>
-      <p className="text-white text-[14px] mt-2">{description}</p>
-    </div>
-  );
-};
-
-const CardsContainer = ({cards2}) => {
-  const [isHoveringImage, setIsHoveringImage] = useState(false);
-  
-  console.log(cards2)
-  const cards = [
+const cards = [
     { image: "/pepsi.jpg", title: "Fizz the World", description: "Pepsi's Expo 2022 campaign" },
     { image: "/display.jpg", title: "A Display To Inspire The Every Day Chef", description: "We created our bespoke, modular displays that can be arranged in countless configurations." },
     { image: "/nutrition.jpg", title: "The Optimum Nutrition For The Optimum Challenge", description: "In less than three weeks, we took the leading sports nutrition specialist Optimum Nutrition and got it in perfect shape." },
@@ -60,19 +14,9 @@ const CardsContainer = ({cards2}) => {
     { image: "/make-every-pack-count.jpg", title: "Make Every Pack Count", description: "Sunbites sustainable product launch at EXPO." },
   ];
 
-  return (
-    <CursorContext.Provider value={{ isHoveringImage, setIsHoveringImage }}>
-      <section className="bg-black m-auto">
-        <div className="m-auto max-w-[1400px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 m-auto sm:p-[200px] p-[70px]">
-            {cards.map((card, index) => (
-              <Card key={index} {...card} />
-            ))}
-          </div>
-        </div>
-      </section>
-    </CursorContext.Provider>
-  );
-};
+export default function cardsapi(req, res){
 
-export default CardsContainer;
+
+    res.status(200).json(cards);
+
+}

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useCursor } from "./cards";
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-
+    
   useEffect(() => {
     const updatePosition = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -16,15 +17,15 @@ export default function CustomCursor() {
     <>
      
       <div
-        className="fixed top-0 left-0 w-12 h-12 border border-gray-500 rounded-full pointer-events-none transition-transform duration-75 ease-out"
+        className="fixed top-0 left-0 w-25 h-25 border border-gray-500 rounded-full pointer-events-none transition-transform duration-75 ease-out"
         style={{
-          transform: `translate(${position.x - 24}px, ${position.y - 24}px)`,
+          transform: `translate(${position.x - 50}px, ${position.y - 50}px)`,
         }}
       />
       <div
-        className="fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none transition-transform duration-75 ease-out"
+        className="fixed top-0 left-0 w-7 h-7 bg-white rounded-full pointer-events-none transition-transform duration-75 ease-out"
         style={{
-          transform: `translate(${position.x - 8}px, ${position.y - 8}px)`,
+          transform: `translate(${position.x - 14}px, ${position.y - 14}px)`,
         }}
       />
     </>

@@ -3,7 +3,7 @@
 
 
 export default function Banner(){
-
+    
     
     return(
         <section className="m-auto bg-center bg-black" style={{ backgroundImage: "url('/banner.svg')"}}>
