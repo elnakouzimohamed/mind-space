@@ -10,8 +10,7 @@ import ContactUs from "@/components/contactus";
 
 import Navbar from "@/components/navbar";
 import axios from "@/utils/axios";
-import { useState, useEffect } from "react";
-import { getData } from "./data";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,11 +21,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default async function Home() {
+export default function Home({data}) {
 
   
     
-
+  console.log(data)
   return (
     <>
     <Navbar></Navbar>
@@ -42,4 +41,18 @@ export default async function Home() {
   
     </>
   );
+
+  
+}
+export async function getStaticProps() {
+  let data;
+  await axios
+    .get('/page/news')
+    .then((res) => {
+      data = res.data.data.sections;
+    })
+    .catch(console.error);
+  return {
+    props: { data },
+  };
 }
