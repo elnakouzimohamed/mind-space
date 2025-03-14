@@ -11,7 +11,7 @@ const CursorContext = createContext();
 
 export const useCursor = () => useContext(CursorContext);
 
-const Card = ({ image, title, description}) => {
+const Card = ({ key, image, title, description}) => {
   const { setIsHoveringImage } = useCursor(); // Use context from provider
 
   return (
@@ -45,7 +45,12 @@ const CardsContainer = ({data}) => {
         <div className="m-auto max-w-[1400px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 m-auto sm:p-[200px] p-[70px]">
             {data.map((card, index) => (
-              <Card key={index} {...card} />
+                <Card
+                key={index}
+                image={card.details.image}
+                title={card.title}
+                description={card.details.text}
+              />
             ))}
           </div>
         </div>
