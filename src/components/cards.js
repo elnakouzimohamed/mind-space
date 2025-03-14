@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext } from "react";
 import Image from "next/image";
-
+import { htmlToText } from "html-to-text";
 
 const CursorContext = createContext();
 
@@ -11,7 +11,7 @@ const CursorContext = createContext();
 
 export const useCursor = () => useContext(CursorContext);
 
-const Card = ({ key, image, title, description}) => {
+const Card = ({ image, title, description}) => {
   const { setIsHoveringImage } = useCursor(); // Use context from provider
 
   return (
@@ -28,7 +28,7 @@ const Card = ({ key, image, title, description}) => {
         />
       </div>
       <h2 className="text-[18px] font-bold mt-2">{title}</h2>
-      <p className="text-white text-[14px] mt-2">{description}</p>
+      <p className="text-white text-[14px] mt-2">{htmlToText(description)}</p>
     </div>
   );
 };

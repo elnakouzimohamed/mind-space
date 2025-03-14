@@ -32,7 +32,7 @@ export default function Home({data}) {
     <CustomCursor></CustomCursor>
     <Banner></Banner>
     
-    <CardsContainer></CardsContainer>
+    <CardsContainer data={data}></CardsContainer>
     <Projects></Projects>
     <ScrollMeter></ScrollMeter>
     <ContactUs></ContactUs>
